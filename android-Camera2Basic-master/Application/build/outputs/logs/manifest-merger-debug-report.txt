@@ -1,0 +1,119 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:16:1-43:12
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\fcd6821b5a68f367d11a439fe1bf1c22\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\372e6d66673f37740d65085f357a9f32\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\dcb4fdfb3e5fe6e1aae21fe3d219bd3e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:2:1-17:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\80238d027b1141c4137a33110b14ab70\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\58fbc03d766d2552409faab4c0e8e653\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\3388f60e7885f2c45935c40e9c4e3565\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e0bf1f6501c400c562d5d5b406b52e90\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\c5cea63d2aaf6d5ee7a48bb6e9c3eabd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\8d9f57bba9afb74d562c1efbbe45eb7e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\abf628cb5c1fc1cc609722346f725646\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\3a72eb661466b5f392001571f40a8e69\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\131c1379c87adbcd44aa9a97c4c81aeb\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\e42c55b4cac0e26bfdfb6b704f705ec8\AndroidManifest.xml:17:1-24:12
+	package
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:17:5-47
+	xmlns:android
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:16:11-69
+uses-permission#android.permission.CAMERA
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:19:5-65
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:19:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:21:5-70
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:21:22-68
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:22:5-80
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:22:22-78
+uses-feature#android.hardware.camera
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:23:5-60
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:23:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:24:5-70
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:24:19-67
+application
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:26:5-41:19
+MERGED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:11:5-15:19
+MERGED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:11:5-15:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\58fbc03d766d2552409faab4c0e8e653\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\58fbc03d766d2552409faab4c0e8e653\AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:29:9-41
+	android:icon
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:28:9-45
+	android:allowBackup
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:27:9-35
+	android:theme
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:30:9-45
+activity#com.example.android.camera2basic.CameraActivity
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:31:9-39:20
+	android:label
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:33:13-45
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:32:13-43
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:34:13-38:29
+action#android.intent.action.MAIN
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:37:27-74
+activity#com.example.android.camera2basic.NewActivity
+ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:40:9-58
+	android:name
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml:40:19-46
+uses-sdk
+INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\fcd6821b5a68f367d11a439fe1bf1c22\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v13:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v13-27.0.2.aar\fcd6821b5a68f367d11a439fe1bf1c22\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\372e6d66673f37740d65085f357a9f32\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\372e6d66673f37740d65085f357a9f32\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\dcb4fdfb3e5fe6e1aae21fe3d219bd3e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\cardview-v7-27.0.2.aar\dcb4fdfb3e5fe6e1aae21fe3d219bd3e\AndroidManifest.xml:20:5-44
+MERGED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.krtkush:LinearTimer:v2.1.1] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\LinearTimer-v2.1.1.aar\7bc0c4b82cd835b7024eaa35d5164b0e\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\80238d027b1141c4137a33110b14ab70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\80238d027b1141c4137a33110b14ab70\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\58fbc03d766d2552409faab4c0e8e653\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.2.aar\58fbc03d766d2552409faab4c0e8e653\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\3388f60e7885f2c45935c40e9c4e3565\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\3388f60e7885f2c45935c40e9c4e3565\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e0bf1f6501c400c562d5d5b406b52e90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\e0bf1f6501c400c562d5d5b406b52e90\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\c5cea63d2aaf6d5ee7a48bb6e9c3eabd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\c5cea63d2aaf6d5ee7a48bb6e9c3eabd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\8d9f57bba9afb74d562c1efbbe45eb7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\8d9f57bba9afb74d562c1efbbe45eb7e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\abf628cb5c1fc1cc609722346f725646\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\abf628cb5c1fc1cc609722346f725646\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\3a72eb661466b5f392001571f40a8e69\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.0.2.aar\3a72eb661466b5f392001571f40a8e69\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\131c1379c87adbcd44aa9a97c4c81aeb\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\support-compat-27.0.2.aar\131c1379c87adbcd44aa9a97c4c81aeb\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\e42c55b4cac0e26bfdfb6b704f705ec8\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\dell\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\e42c55b4cac0e26bfdfb6b704f705ec8\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+		ADDED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
+		INJECTED from D:\Custom camera app\android-Camera2Basic-master\Application\src\main\AndroidManifest.xml
