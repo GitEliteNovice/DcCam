@@ -1,5 +1,6 @@
 ## CustomCamera [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice)
 A Custom camera Demo App. In this Demo we can take pictures and record videos too.
+<a href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @TwitterDev</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Why would anyone want to use this?
 If someone wants to upload pictures or videoes from its own app to main the quality of app content. Like instagram use its own custom camera.  
