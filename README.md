@@ -1,4 +1,4 @@
-## CustomCamera
+## CustomCamera https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg
 A Custom camera Demo App. In this Demo we can take pictures and record videos too.
 
 ## Why would anyone want to use this?
