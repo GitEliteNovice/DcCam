@@ -1,3 +1,7 @@
 # CustomCamera
 A Custom camera Demo App. In this Demo we can take pictures and record videos too.
-![customcamerapreview](https://user-images.githubusercontent.com/15318984/43354068-d7501070-9262-11e8-8c9a-0069b1789fb7.jpeg)
+
+![camera_prev1](https://user-images.githubusercontent.com/15318984/43355909-b9f91cee-9283-11e8-9f86-a245b22d3df5.png)
+
+![camera_prev2](https://user-images.githubusercontent.com/15318984/43355910-ba34d8b0-9283-11e8-987a-8e457c8878dd.png)
+
