@@ -520,8 +520,8 @@ public class Camera2BasicFragment extends Fragment
         LinearTimerView  linearTimerView = view.findViewById(R.id.linearTimer);
         time =view. findViewById(R.id.time);
         picture =  view.findViewById(R.id.picture);
-        picture.setOnLongClickListener(speakHoldListener);
-        picture.setOnTouchListener(speakTouchListener);
+        picture.setOnLongClickListener(recordHoldListener);
+        picture.setOnTouchListener(recordTouchListener);
         camera_flash=(ImageView)view.findViewById(R.id.camera_flash);
         mTextureView = (AutoFitTextureView) view.findViewById(R.id.texture);
         long duration = 30 * 1000;
@@ -535,7 +535,7 @@ public class Camera2BasicFragment extends Fragment
 
     }
 
-    private View.OnLongClickListener speakHoldListener = new View.OnLongClickListener() {
+    private View.OnLongClickListener recordHoldListener = new View.OnLongClickListener() {
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
@@ -554,7 +554,7 @@ public class Camera2BasicFragment extends Fragment
         }
     };
 
-    private View.OnTouchListener speakTouchListener = new View.OnTouchListener() {
+    private View.OnTouchListener recordTouchListener = new View.OnTouchListener() {
 
         @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         @Override
