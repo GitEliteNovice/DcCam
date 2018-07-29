@@ -1,4 +1,4 @@
-## CustomCamera [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-CustomCamera-green.svg?style=flat )]( https://android-arsenal.com/details/1/7064 ) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40elite_novice)](https://twitter.com/elite_novice)
+## CustomCamera [![API](https://img.shields.io/badge/API-15%2B-red.svg)](https://android-arsenal.com/api?level=15) [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-CustomCamera-green.svg?style=flat )]( https://android-arsenal.com/details/1/7064 ) [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=social&label=Follow%20%40elite_novice)](https://twitter.com/elite_novice)
 
 
 A Custom camera Demo App. In this Demo we can take pictures and record videos too.
