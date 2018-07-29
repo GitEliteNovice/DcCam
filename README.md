@@ -12,3 +12,19 @@ If someone wants to upload pictures or videoes from its own app to main the qual
 
 ![camera_prev2](https://user-images.githubusercontent.com/15318984/43355910-ba34d8b0-9283-11e8-987a-8e457c8878dd.png)
 
+
+Connect With Me
+-----------
+
+Aryan Dhankar (Elite Novice)
+I love making new friends, please feel free to connect with me.
+
+<a href="https://plus.google.com/u/0/+AryanDhankar">
+  <img alt="Connect me on Google+" src="/art/gplus.png" />
+</a>
+<a href="https://www.facebook.com/aryan.dhankar.3">
+  <img alt="Connect me on Facebook" src="/art/fb.png" width="64" height="64" />
+</a>
+<a href="https://www.linkedin.com/in/aryan-dhankar-961b50117/">
+  <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
+</a> 
