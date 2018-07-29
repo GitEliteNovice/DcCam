@@ -27,4 +27,9 @@ I love making new friends, please feel free to connect with me.
 </a>
 <a href="https://www.linkedin.com/in/aryan-dhankar-961b50117/">
   <img alt="Connect me on LinkedIn" src="/art/linkedin.png" />
-</a> 
+</a>
+
+
+Question / Contact Me / Hire Me
+---------------------
+Please feel free to ping me at **aryandhankar11@gmail.com**. Expected package would be **5.5 lpa**.
