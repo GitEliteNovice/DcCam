@@ -59,6 +59,37 @@ This is where we stop recoding video ,we release button
  We can change duration of recording by ...
         
         long duration = 30 * 1000
+        
+ We can a adjusting the fps range and fixing the dark preview by adding this ..
+     
+     mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, getRange());
+     
+ getRange is the method where we do our custom setting to adjust range as per our requirement.
+ 
+     private Range<Integer> getRange() {
+        CameraManager mCameraManager = (CameraManager)getActivity().getSystemService(Context.CAMERA_SERVICE);
+        CameraCharacteristics chars = null;
+        try {
+            chars = mCameraManager.getCameraCharacteristics(mCameraId);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+        Range<Integer>[] ranges = chars.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
+
+        Range<Integer> result = null;
+
+        for (Range<Integer> range : ranges) {
+            int upper = range.getUpper();
+
+            // 10 - min range upper for my needs
+            if (upper >= 10) {
+                if (result == null || upper < result.getUpper().intValue()) {
+                    result = range;
+                }
+            }
+        }
+        return result;
+    }
 
  We can change the color of progress of recoding circle from xml by these 2 
             
