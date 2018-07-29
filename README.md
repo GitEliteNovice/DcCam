@@ -135,4 +135,4 @@ I love making new friends, please feel free to connect with me.
 
 Question / Contact Me / Hire Me
 ---------------------
-Please feel free to ping me at **aryandhankar11@gmail.com**. Expected package would be **5.5 lpa**.
+Please feel free to ping me at **aryandhankar11@gmail.com**.
