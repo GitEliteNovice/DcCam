@@ -115,6 +115,7 @@ This is where we stop recoding video ,we release button
 
 ![camera_prev2](https://user-images.githubusercontent.com/15318984/43355910-ba34d8b0-9283-11e8-987a-8e457c8878dd.png)
 
+## Still in development, lots of things will be add on to this. So stay tuned.... 
 
 Connect With Me
 -----------
