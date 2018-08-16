@@ -5,7 +5,7 @@ A Custom camera Demo App. In this Demo we can take pictures and record videos to
 
 
 ## Why would anyone want to use this?
-If someone wants to upload pictures or videoes from its own app to main the quality of app content.And if you want to add a limit to user , that user should only able to record video up to certain length.Like instagram then this demo is for you.
+If someone wants to upload pictures or videoes from its own app to main the quality of app content. And if you want to add a limit to user , that user should only able to record video up to certain length.Like instagram then this demo is for you.
 
 # Basic Usage
 
