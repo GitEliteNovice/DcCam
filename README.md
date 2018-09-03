@@ -9,7 +9,7 @@ If someone wants to upload pictures or videoes from its own app to main the qual
 
 # Basic Usage
 
-This is where we start recoding video , when button long pressed
+This is where we start recoding video , when button long pressed .
   
      private View.OnLongClickListener recordHoldListener = new View.OnLongClickListener() {
 
