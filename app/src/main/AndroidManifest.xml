@@ -23,6 +23,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".NewActivity"></activity>
+        <activity android:name=".DetailedImageVideo"
+
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"
+            ></activity>
     </application>
 
 </manifest>

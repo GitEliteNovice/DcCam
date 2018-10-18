@@ -1149,9 +1149,9 @@ public class Camera2BasicFragment extends Fragment
                     unlockFocus();
 
 
-                    Intent i=new Intent(getContext(),NewActivity.class);
+                    Intent i=new Intent(getContext(),DetailedImageVideo.class);
 
-                    i.putExtra("filepath",mFile.toString());
+                    i.putExtra(Config.KeyName.FILEPATH,mFile.toString());
                     startActivity(i);
 
 
@@ -1250,20 +1250,62 @@ public class Camera2BasicFragment extends Fragment
     }
 
 
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void setFlash(CaptureRequest.Builder requestBuilder){
         if (  flash_state==0){
             requestBuilder.set(CaptureRequest.CONTROL_AE_MODE,
                     CaptureRequest.CONTROL_AE_MODE_ON_AUTO_FLASH);
-            camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_auto));
+            getActivity().runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_auto));
+                    // Stuff that updates the UI
+
+                }
+            });
+            try {
+            }catch (Exception e){
+                Log.d("work",e.getMessage());
+            }
+
+
         }else if (  flash_state==-1){
             requestBuilder.set(CaptureRequest.FLASH_MODE,
                     CaptureRequest.FLASH_MODE_OFF);
-            camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_off));
+            getActivity().runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_off));
+                    // Stuff that updates the UI
+
+                }
+            });
+            try{
+            }catch (Exception e){
+                Log.d("work",e.getMessage());
+            }
         }else if (  flash_state==1){
             requestBuilder.set(CaptureRequest.FLASH_MODE,
                     CaptureRequest.FLASH_MODE_SINGLE);
-            camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_on));
+            getActivity().runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+                    camera_flash.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_flash_on));
+                    // Stuff that updates the UI
+
+                }
+            });
+            try{
+
+            }catch (Exception e){
+                Log.d("work",e.getMessage());
+            }
         }
     }
 
@@ -1568,9 +1610,9 @@ public class Camera2BasicFragment extends Fragment
 
 
 
-        Intent i=new Intent(getContext(),NewActivity.class);
+        Intent i=new Intent(getContext(),DetailedImageVideo.class);
 
-        i.putExtra("filepath",temp_path );
+        i.putExtra(Config.KeyName.FILEPATH,temp_path );
         startActivity(i);
 
         startPreview();
