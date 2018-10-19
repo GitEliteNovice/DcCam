@@ -5,13 +5,117 @@ A Custom camera Demo App. In this Demo we can take pictures and record videos to
 
 
 ## Why would anyone want to use this?
-If someone wants to upload pictures or videoes from its own app to main the quality of app content.And if you want to add a limit to user , that user should only able to record video up to certain length.Like instagram then this demo is for you
+If someone wants to upload pictures or videos from its own app to main the quality of app content. And if you want to add a limit to user , that user should only able to record video up to certain length. Like instagram then this demo is for you.
 
+# Basic Usage
+
+This is where we start recoding video , when button long pressed .
+  
+     private View.OnLongClickListener recordHoldListener = new View.OnLongClickListener() {
+
+       @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+        @Override
+        public boolean onLongClick(View pView) {
+            // Do something when your hold starts here.
+
+            Log.d("things called","onLongPressed");
+            if (!startRecordingcalled){
+                startRecordingVideo();
+                linearTimer.startTimer();
+            }
+
+
+            isSpeakButtonLongPressed = true;
+            return true;
+        }
+    };
+    
+This is where we stop recoding video ,we release button 
+    
+    private View.OnTouchListener recordTouchListener = new View.OnTouchListener() {
+
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+        @Override
+        public boolean onTouch(View pView, MotionEvent pEvent) {
+            pView.onTouchEvent(pEvent);
+            // We're only interested in when the button is released.
+            if (pEvent.getAction() == MotionEvent.ACTION_UP) {
+                // We're only interested in anything if our speak button is currently pressed.
+                if (isSpeakButtonLongPressed) {
+
+                    Log.d("things called","onTouch");
+                    stopRecordingVideo();
+                    linearTimer.pauseTimer();
+                    linearTimer.resetTimer();
+                    startRecordingcalled=false;
+                    // Do something when the button is released.
+                    isSpeakButtonLongPressed = false;
+                }
+            }
+            return false;
+        }
+    };
+    
+ We can change duration of recording by ...
+        
+        long duration = 30 * 1000
+        
+ We can a adjusting the fps range and fixing the dark preview by adding this ..
+     
+     mPreviewRequestBuilder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, getRange());
+     
+ getRange is the method where we do our custom setting to adjust range as per our requirement.
+ 
+     private Range<Integer> getRange() {
+        CameraManager mCameraManager = (CameraManager)getActivity().getSystemService(Context.CAMERA_SERVICE);
+        CameraCharacteristics chars = null;
+        try {
+            chars = mCameraManager.getCameraCharacteristics(mCameraId);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+        Range<Integer>[] ranges = chars.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
+
+        Range<Integer> result = null;
+
+        for (Range<Integer> range : ranges) {
+            int upper = range.getUpper();
+
+            // 10 - min range upper for my needs
+            if (upper >= 10) {
+                if (result == null || upper < result.getUpper().intValue()) {
+                    result = range;
+                }
+            }
+        }
+        return result;
+    }
+
+ We can change the color of progress of recoding circle from xml by these 2 
+            
+         timer:initialColor="@color/white"
+         timer:progressColor="@color/red"
+            
+
+        <io.github.krtkush.lineartimer.LinearTimerView
+            android:id="@+id/linearTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            timer:radius="18dp"
+
+            timer:strokeWidth="2dp"
+            timer:startingPoint="270"
+            timer:initialColor="@color/white"
+            timer:progressColor="@color/red"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+            
 ## Screenshots
 ![camera_prev1](https://user-images.githubusercontent.com/15318984/43355909-b9f91cee-9283-11e8-9f86-a245b22d3df5.png)
 
 ![camera_prev2](https://user-images.githubusercontent.com/15318984/43355910-ba34d8b0-9283-11e8-987a-8e457c8878dd.png)
 
+# Still in development, lots of things will be add on to this. So stay tuned.... 
 
 Connect With Me
 -----------
@@ -32,4 +136,4 @@ I love making new friends, please feel free to connect with me.
 
 Question / Contact Me / Hire Me
 ---------------------
-Please feel free to ping me at **aryandhankar11@gmail.com**. Expected package would be **5.5 lpa**.
+Please feel free to ping me at **aryandhankar11@gmail.com**.
