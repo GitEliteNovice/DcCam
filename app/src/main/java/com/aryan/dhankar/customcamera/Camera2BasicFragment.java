@@ -32,6 +32,7 @@ import android.graphics.Matrix;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
+import android.hardware.SensorManager;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCaptureSession;
 import android.hardware.camera2.CameraCharacteristics;
@@ -50,6 +51,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v13.app.FragmentCompat;
 import android.support.v4.app.ActivityCompat;
@@ -62,6 +64,7 @@ import android.util.Size;
 import android.util.SparseIntArray;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.OrientationEventListener;
 import android.view.Surface;
 import android.view.TextureView;
 import android.view.View;
@@ -505,6 +508,85 @@ public class Camera2BasicFragment extends Fragment
         return new Camera2BasicFragment();
     }
 
+    private SensorManager mSensorManager;
+    private OrientationEventListener orientationEventListener;
+    private static final int ORIENTATION_PORTRAIT_NORMAL = 1;
+    private static final int ORIENTATION_PORTRAIT_INVERTED = 2;
+    private static final int ORIENTATION_LANDSCAPE_NORMAL = 3;
+    private static final int ORIENTATION_LANDSCAPE_INVERTED = 4;
+    private int mOrientation = -1;
+    private int global_orm=0;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        orientationEventListener = new OrientationEventListener(getActivity(), mSensorManager.SENSOR_DELAY_NORMAL) {
+            @Override
+            public void onOrientationChanged(int orientation) {
+
+                // determine our orientation based on sensor response
+                int lastOrientation = mOrientation;
+
+                if (orientation >= 315 || orientation < 45) {
+                    if (mOrientation != ORIENTATION_PORTRAIT_NORMAL) {
+                        mOrientation = ORIENTATION_PORTRAIT_NORMAL;
+                    }
+                } else if (orientation < 315 && orientation >= 225) {
+                    if (mOrientation != ORIENTATION_LANDSCAPE_NORMAL) {
+                        mOrientation = ORIENTATION_LANDSCAPE_NORMAL;
+                    }
+                } else if (orientation < 225 && orientation >= 135) {
+                    if (mOrientation != ORIENTATION_PORTRAIT_INVERTED) {
+                        mOrientation = ORIENTATION_PORTRAIT_INVERTED;
+                    }
+                } else { // orientation <135 && orientation > 45
+                    if (mOrientation != ORIENTATION_LANDSCAPE_INVERTED) {
+                        mOrientation = ORIENTATION_LANDSCAPE_INVERTED;
+                    }
+                }
+
+                if (lastOrientation != mOrientation) {
+                    switch (mOrientation) {
+                        case 1: {
+                            global_orm=0;
+
+                            break;
+                        }
+
+                        case 2: {
+                            global_orm=180;
+                            break;
+                        }
+
+                        case 3: {
+                            global_orm=90;
+                            break;
+                        }
+
+                        case 4: {
+                            global_orm=270;
+                   /* rotateAnimation = new RotateAnimation(startangle, endangle, Animation.RELATIVE_TO_SELF,
+                            0.5f, Animation.RELATIVE_TO_SELF,
+                            0.5f);
+                    rotateAnimation.setDuration(2000);
+                    rotateAnimation.setRepeatCount(Animation.INFINITE);
+                    mCameraImageview.setAnimation(rotateAnimation);*/
+                            break;
+                        }
+                        default:
+                            break;
+
+                    }
+
+                }
+            }
+
+        };
+        if (orientationEventListener.canDetectOrientation()) {
+            orientationEventListener.enable();
+        }
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -1504,14 +1586,15 @@ public class Camera2BasicFragment extends Fragment
         mMediaRecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);
         mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
         int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
-        switch (mSensorOrientation) {
-            case SENSOR_ORIENTATION_DEFAULT_DEGREES:
-                mMediaRecorder.setOrientationHint(DEFAULT_ORIENTATIONS.get(rotation));
-                break;
-            case SENSOR_ORIENTATION_INVERSE_DEGREES:
-                mMediaRecorder.setOrientationHint(INVERSE_ORIENTATIONS.get(rotation));
-                break;
+        Log.d("orentataions", String.valueOf(global_orm));
+        if(global_orm==0){
+            mMediaRecorder.setOrientationHint(getOrientation(rotation));
+        }else if (global_orm==90){
+            mMediaRecorder.setOrientationHint(DEFAULT_ORIENTATIONS.get(rotation));
+        }else if (global_orm==270){
+            mMediaRecorder.setOrientationHint((ORIENTATIONS.get(rotation) + mSensorOrientation ) % 360);
         }
+
         mMediaRecorder.prepare();
     }
 
