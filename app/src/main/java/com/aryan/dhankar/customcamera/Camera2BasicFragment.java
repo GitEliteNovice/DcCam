@@ -1259,7 +1259,15 @@ public class Camera2BasicFragment extends Fragment
         // We have to take that into account and rotate JPEG properly.
         // For devices with orientation of 90, we simply return our mapping from ORIENTATIONS.
         // For devices with orientation of 270, we need to rotate the JPEG 180 degrees.
-        return (ORIENTATIONS.get(rotation) + mSensorOrientation + 270) % 360;
+        if (global_orm==270){
+            return (ORIENTATIONS.get(rotation) + mSensorOrientation ) % 360;
+        }
+        else if (global_orm==90){
+            return DEFAULT_ORIENTATIONS.get(rotation);
+        }
+        else {
+            return (ORIENTATIONS.get(rotation) + mSensorOrientation + 270) % 360;
+        }
     }
 
     /**
@@ -1587,14 +1595,7 @@ public class Camera2BasicFragment extends Fragment
         mMediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
         int rotation = activity.getWindowManager().getDefaultDisplay().getRotation();
         Log.d("orentataions", String.valueOf(global_orm));
-        if(global_orm==0){
-            mMediaRecorder.setOrientationHint(getOrientation(rotation));
-        }else if (global_orm==90){
-            mMediaRecorder.setOrientationHint(DEFAULT_ORIENTATIONS.get(rotation));
-        }else if (global_orm==270){
-            mMediaRecorder.setOrientationHint((ORIENTATIONS.get(rotation) + mSensorOrientation ) % 360);
-        }
-
+        mMediaRecorder.setOrientationHint(getOrientation(rotation));
         mMediaRecorder.prepare();
     }
 
