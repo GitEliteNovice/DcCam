@@ -70,6 +70,7 @@ import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -82,6 +83,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -206,6 +209,7 @@ public class Camera2BasicFragment extends Fragment
 
     private LinearTimer linearTimer;
     private TextView time;
+    private LinearLayout ll_video_timer;
 
     private CameraCaptureSession mPreviewSession;
     /**
@@ -601,6 +605,7 @@ public class Camera2BasicFragment extends Fragment
         //  view.findViewById(R.id.info).setOnClickListener(this);
         LinearTimerView  linearTimerView = view.findViewById(R.id.linearTimer);
         time =view. findViewById(R.id.time);
+        ll_video_timer=view.findViewById(R.id.ll_video_timer);
         picture =  view.findViewById(R.id.picture);
         picture.setOnLongClickListener(recordHoldListener);
         picture.setOnTouchListener(recordTouchListener);
@@ -626,6 +631,7 @@ public class Camera2BasicFragment extends Fragment
 
             Log.d("things called","onLongPressed");
             if (!startRecordingcalled){
+                ll_video_timer.setVisibility(View.VISIBLE);
                 startRecordingVideo();
                 linearTimer.startTimer();
             }
@@ -648,9 +654,11 @@ public class Camera2BasicFragment extends Fragment
                 if (isSpeakButtonLongPressed) {
 
                     Log.d("things called","onTouch");
-                    stopRecordingVideo();
+
                     linearTimer.pauseTimer();
                     linearTimer.resetTimer();
+                    stopRecordingVideo();
+                    ll_video_timer.setVisibility(View.GONE);
                     startRecordingcalled=false;
                     // Do something when the button is released.
                     isSpeakButtonLongPressed = false;
@@ -1435,6 +1443,8 @@ public class Camera2BasicFragment extends Fragment
 
         Log.d("things called","onTouch");
         stopRecordingVideo();
+
+        ll_video_timer.setVisibility(View.GONE);
         linearTimer.resetTimer();
         startRecordingcalled=false;
         // Do something when the button is released.
@@ -1680,8 +1690,16 @@ public class Camera2BasicFragment extends Fragment
         mIsRecordingVideo = false;
 
         // Stop recording
-        mMediaRecorder.stop();
-        mMediaRecorder.reset();
+
+        Timer timer = new Timer();
+        TimerTask timerTask = new TimerTask() {
+            @Override
+            public void run() {
+                mMediaRecorder.stop();
+                mMediaRecorder.reset();
+            }
+        };
+        timer.schedule(timerTask,30);
 
         String temp_path=mNextVideoAbsolutePath;
         Activity activity = getActivity();

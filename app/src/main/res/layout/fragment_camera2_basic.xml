@@ -34,15 +34,40 @@
         android:layout_marginTop="15dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+<LinearLayout
+    android:id="@+id/ll_video_timer"
+    android:gravity="center"
+    android:padding="3dp"
+    android:paddingLeft="3dp"
+    android:paddingRight="5dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginRight="25dp"
+    android:orientation="horizontal"
+android:visibility="gone"
+    android:alpha="0.6"
+    android:background="@drawable/btn_rounded_gray"
+    android:layout_alignParentTop="true"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <io.github.krtkush.lineartimer.LinearTimerView
+        android:id="@+id/linearTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        timer:radius="2dp"
+        timer:strokeWidth="1dp"
+        timer:initialColor="@color/white"
+        timer:progressColor="@color/red"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/time"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="5dp"
         android:textColor="@color/white"
-        android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+</LinearLayout>
     <ImageView
         android:id="@+id/camera_flash"
         android:layout_below="@id/camera_rotate"
@@ -70,18 +95,7 @@
             android:layout_marginTop="10dp"
             android:layout_height="100dp" />
 
-        <io.github.krtkush.lineartimer.LinearTimerView
-            android:id="@+id/linearTimer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            timer:radius="18dp"
 
-            timer:strokeWidth="2dp"
-            timer:startingPoint="270"
-            timer:initialColor="@color/white"
-            timer:progressColor="@color/red"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
