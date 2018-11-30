@@ -16,7 +16,7 @@ If someone wants to upload pictures or videos from its own app to main the quali
 ## Cons
 1. For now it doesn't support all the devices.
 
-## I Need support from you guys , if you find bugs in this example pklease let me know. You can also contibute in this project.
+## I Need support from you guys , if you find bugs in this example please let me know. You can also contibute in this project.
 
 # Basic Usage
 
