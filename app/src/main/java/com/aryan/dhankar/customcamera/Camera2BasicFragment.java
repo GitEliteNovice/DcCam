@@ -631,6 +631,7 @@ public class Camera2BasicFragment extends Fragment
 
             Log.d("things called","onLongPressed");
             if (!startRecordingcalled){
+                opencameracameraforvideo(mTextureView.getWidth(), mTextureView.getHeight());
                 ll_video_timer.setVisibility(View.VISIBLE);
                 startRecordingVideo();
                 linearTimer.startTimer();
@@ -888,10 +889,6 @@ public class Camera2BasicFragment extends Fragment
         }
         return true;
     }
-
-    /**
-     * Opens the camera specified by {@link Camera2BasicFragment#mCameraId}.
-     */
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void openCamera(int width, int height) {
         if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.CAMERA)
@@ -906,7 +903,7 @@ public class Camera2BasicFragment extends Fragment
             requestVideoPermissions();
             return;
         }
-        final Activity activity = getActivity();
+        Activity activity = getActivity();
         if (null == activity || activity.isFinishing()) {
             return;
         }
@@ -916,29 +913,7 @@ public class Camera2BasicFragment extends Fragment
             if (!mCameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
                 throw new RuntimeException("Time out waiting to lock camera opening.");
             }
-            //  String cameraId = manager.getCameraIdList()[0];
-
-            // Choose the sizes for camera preview and video recording
-            CameraCharacteristics characteristics = manager.getCameraCharacteristics(mCameraId);
-            StreamConfigurationMap map = characteristics
-                    .get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
-            mSensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
-            if (map == null) {
-                throw new RuntimeException("Cannot get available preview/video sizes");
-            }
-            mVideoSize = chooseVideoSize(map.getOutputSizes(MediaRecorder.class));
-            mPreviewSize = chooseOptimalSize(map.getOutputSizes(SurfaceTexture.class),
-                    width, height, mVideoSize);
-
-            int orientation = getResources().getConfiguration().orientation;
-            if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                mTextureView.setAspectRatio(mPreviewSize.getWidth(), mPreviewSize.getHeight());
-            } else {
-                mTextureView.setAspectRatio(mPreviewSize.getHeight(), mPreviewSize.getWidth());
-            }
-            configureTransform(width, height);
-            mMediaRecorder = new MediaRecorder();
-            manager.openCamera(mCameraId, mStateCallback, null);
+            manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
         } catch (CameraAccessException e) {
             Toast.makeText(activity, "Cannot access the camera.", Toast.LENGTH_SHORT).show();
             activity.finish();
@@ -950,6 +925,45 @@ public class Camera2BasicFragment extends Fragment
         } catch (InterruptedException e) {
             throw new RuntimeException("Interrupted while trying to lock camera opening.");
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    private void opencameracameraforvideo(int width, int height){
+
+        //  String cameraId = manager.getCameraIdList()[0];
+
+        // Choose the sizes for camera preview and video recording
+
+
+        Activity activity = getActivity();
+        if (null == activity || activity.isFinishing()) {
+            return;
+        }
+        CameraManager manager = (CameraManager) activity.getSystemService(Context.CAMERA_SERVICE);
+        CameraCharacteristics characteristics = null;
+        try {
+            characteristics = manager.getCameraCharacteristics(mCameraId);
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+        StreamConfigurationMap map = characteristics
+                .get(CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
+        mSensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
+        if (map == null) {
+            throw new RuntimeException("Cannot get available preview/video sizes");
+        }
+        mVideoSize = chooseVideoSize(map.getOutputSizes(MediaRecorder.class));
+        mPreviewSize = chooseOptimalSize(map.getOutputSizes(SurfaceTexture.class),
+                width, height, mVideoSize);
+
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            mTextureView.setAspectRatio(mPreviewSize.getWidth(), mPreviewSize.getHeight());
+        } else {
+            mTextureView.setAspectRatio(mPreviewSize.getHeight(), mPreviewSize.getWidth());
+        }
+        configureTransform(width, height);
+        mMediaRecorder = new MediaRecorder();
     }
 
     /**
