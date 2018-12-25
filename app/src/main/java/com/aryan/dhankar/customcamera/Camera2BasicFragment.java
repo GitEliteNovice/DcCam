@@ -1167,7 +1167,8 @@ public class Camera2BasicFragment extends Fragment
             captureStillPicture();
         } else {
             // back camera selected, trigger the focus before creating an image
-            lockFocus();
+//            lockFocus();
+            captureStillPicture();
         }
 
     }
