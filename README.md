@@ -49,6 +49,6 @@ I love making new friends, please feel free to connect with me.
 </a>
 
 
-Question / Contact Me / Hire Me
+Question / Contact Me
 ---------------------
 Please feel free to ping me at **aryandhankar11@gmail.com**.
