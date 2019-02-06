@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.aryan.dhankar.DcCam;
+=======
+package com.aryan.dhankar.customcamera;
+>>>>>>> 3467ea8c7d9d53fc3d4e32bb657d0c30142bf7ee
 
 import org.junit.Test;
 

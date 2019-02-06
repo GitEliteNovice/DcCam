@@ -860,6 +860,9 @@ public class DcCamFragment extends Fragment
             closeCamera();
             reopenCamera();
             camera_flash.setClickable(false);
+
+            flash_state=0;
+
             getActivity().runOnUiThread(new Runnable() {
 
                 @Override

@@ -17,7 +17,7 @@
 
 <resources>
     <string name="app_name">DcCam</string>
-    <string name="intro_message">
+   <string name="intro_message">
 
     </string>
 </resources>

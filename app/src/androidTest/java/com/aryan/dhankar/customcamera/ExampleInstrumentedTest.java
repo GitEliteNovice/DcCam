@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package com.aryan.dhankar.DcCam;
+=======
+package com.aryan.dhankar.customcamera;
+>>>>>>> 3467ea8c7d9d53fc3d4e32bb657d0c30142bf7ee
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +25,10 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
+<<<<<<< HEAD
         assertEquals("com.aryan.dhankar.DcCam", appContext.getPackageName());
+=======
+        assertEquals("com.aryan.dhankar.customcamera", appContext.getPackageName());
+>>>>>>> 3467ea8c7d9d53fc3d4e32bb657d0c30142bf7ee
     }
 }
