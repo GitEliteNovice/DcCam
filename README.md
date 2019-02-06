@@ -5,12 +5,7 @@ A Custom camera Demo App. In this Demo we can take pictures and record videos to
 
 
 ## Why would anyone want to use this?
-<<<<<<< HEAD
 If someone wants to upload pictures or videos from its own app to main the quality of app content. And if you want to add a limit to user , that user should only able to record video up to certain length. Like instagram then this demo is for you.
-=======
-If someone wants to upload pictures or videos from its own app to main the quality of app content. And if you want to add a limit to user , that user should only able to record video up to certain length.
-
-
 
 ## Pros 
 1. Its handles orientations by its own. For both image and Video.
@@ -20,7 +15,7 @@ If someone wants to upload pictures or videos from its own app to main the quali
 1. For now it doesn't support all the devices.
 
 ## I Need support from you guys , if you find bugs in this example please let me know. You can also contibute in this project.
->>>>>>> 3467ea8c7d9d53fc3d4e32bb657d0c30142bf7ee
+
 
 # Basic Usage
 
@@ -130,15 +125,13 @@ This is where we stop recoding video ,we release button
 
 ![camera_prev2](https://user-images.githubusercontent.com/15318984/43355910-ba34d8b0-9283-11e8-987a-8e457c8878dd.png)
 
-<<<<<<< HEAD
-# Still in development, lots of things will be add on to this. So stay tuned.... 
-=======
+
 # Still in development, lots of things will be add on to this.
 1. Auto rotate icons.
 2. Gallery like instagram
 3. New features
 ## So stay tuned.... 
->>>>>>> 3467ea8c7d9d53fc3d4e32bb657d0c30142bf7ee
+
 
 Connect With Me
 -----------
