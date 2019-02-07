@@ -1269,18 +1269,8 @@ public class DcCamFragment extends Fragment
         } else if (Surface.ROTATION_180 == rotation) {
             matrix.postRotate(180, centerX, centerY);
         }
-        if (mCameraLensFacingDirection == CameraCharacteristics.LENS_FACING_FRONT)
-        {
-            float[] mirrorY = { -1, 0, 0, 0, 1, 0, 0, 0, 1};
-            Matrix matrixMirrorY = new Matrix();
-            matrixMirrorY.setValues(mirrorY);
+            mTextureView.setTransform(matrix);
 
-            matrix.postConcat(matrixMirrorY);
-            matrix.postRotate(90);
-            mTextureView.setTransform(matrix);
-        }else {
-            mTextureView.setTransform(matrix);
-        }
 
     }
 
