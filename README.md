@@ -20,6 +20,8 @@ If someone wants to upload pictures or videos from its own app to main the quali
 
 ## I Need support from you guys , if you find bugs in this example please let me know. You can also contibute in this project.
 
+If you want to say thanks or want to share how much you like my efforts, then you can share it with me with [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/GitEliteNovice) 
+
 ## Screenshots
 ![camera_prev1](https://user-images.githubusercontent.com/15318984/43355909-b9f91cee-9283-11e8-9f86-a245b22d3df5.png)
 
